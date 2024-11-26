@@ -26,6 +26,7 @@ function App() {
   };
 
   const handleClick = (value) =>{
+
     setTip(value);
   }
 
@@ -74,6 +75,7 @@ function App() {
     <div className='container-left'>     
       <label htmlFor="">Bill</label>
        <input 
+       className='input-bill'
         type="number"
         name='bill'
         placeholder='0'
@@ -83,19 +85,19 @@ function App() {
         <label htmlFor="">Select Tip %</label>
         <div className='container-buttons'>
         <button
-        className='button-tip'
+        className={tip == '5' ? 'button-tip active' : 'button-tip'}
         onClick={()=>handleClick('5')}>5%</button>
         <button
-        className='button-tip'
+        className={tip == '10' ? 'button-tip active' : 'button-tip'}
         onClick={()=>handleClick('10')}>10%</button>
         <button
-        className='button-tip'
+        className={tip == '15' ? 'button-tip active' : 'button-tip'}
         onClick={()=>handleClick('15')}>15%</button>
         <button
-        className='button-tip'
+        className={tip == '25' ? 'button-tip active' : 'button-tip'}
         onClick={()=>handleClick('25')}>25%</button>
         <button
-        className='button-tip'
+        className={tip == '50' ? 'button-tip active' : 'button-tip'}
         onClick={()=>handleClick('50')}>50%</button>
         <input
          className='custom-input'
@@ -109,8 +111,10 @@ function App() {
         </div>
         <label htmlFor="">Number of People</label>    
         <input 
+        className='input-people'
         type="number"
         name='people-number'
+        placeholder='0'
         value={people}
         onChange={handleChange} />
       </div>
