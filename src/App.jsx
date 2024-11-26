@@ -1,16 +1,15 @@
 import { useState } from 'react'
 import './App.css'
+import Logo from '../src/assets/img/logo.svg'
 
 function App() {
   const [bill,setBill] = useState('');
   const [people,setPeople] = useState('');
   const [customTip,setCustomTip] = useState('');
   const [tip,setTip] = useState('');
+  
 
  
-
-
-
   const handleChange = (e) =>{
     const {name,value} = e.target;
     if(name === 'bill'){
@@ -55,13 +54,24 @@ function App() {
 
   }
 
- 
-  
+  const reset = () => {
+    setBill('')
+    setCustomTip('')
+    setPeople('')
+    setTip('');
+  };
+
+
+
+
+
   return (
     <>
+    <div className='logo-container'>
+    <img className="logo"src={Logo} alt="" />
+    </div>
     <div className='container'>
-    <div className='container-left'>
-      <div>
+    <div className='container-left'>     
       <label htmlFor="">Bill</label>
        <input 
         type="number"
@@ -70,35 +80,40 @@ function App() {
         value={bill}
         onChange={handleChange}
       />
-      <div className='select-tip'>
         <label htmlFor="">Select Tip %</label>
+        <div className='container-buttons'>
         <button
+        className='button-tip'
         onClick={()=>handleClick('5')}>5%</button>
         <button
+        className='button-tip'
         onClick={()=>handleClick('10')}>10%</button>
         <button
+        className='button-tip'
         onClick={()=>handleClick('15')}>15%</button>
         <button
+        className='button-tip'
         onClick={()=>handleClick('25')}>25%</button>
         <button
+        className='button-tip'
         onClick={()=>handleClick('50')}>50%</button>
         <input
+         className='custom-input'
          type="Number"
          placeholder='Custom'
+         value={customTip}
          name='custom-tip'
          onChange={handleChange}
          onClick={()=>handleClick(customTip)}
           />
-      </div>
-      <div className='number-people'>
-        <label htmlFor="">Number of People</label>
+        </div>
+        <label htmlFor="">Number of People</label>    
         <input 
         type="number"
         name='people-number'
+        value={people}
         onChange={handleChange} />
       </div>
-      </div>
-    </div>
     <div className='container-right'>
       <div>
         <div>
@@ -106,8 +121,7 @@ function App() {
           <p>/ person</p>
         </div>
         <div>
-          <strong
-          >{totalTipAmount()}</strong>
+          {totalTipAmount()}
         </div>
       </div>
       <div>
@@ -119,7 +133,9 @@ function App() {
           {totalAmount()}
         </div>
       </div>
-      <button>RESET</button>
+      <button
+      className='btn-reset'
+      onClick={() => reset()}>RESET</button>
 
     </div>
 

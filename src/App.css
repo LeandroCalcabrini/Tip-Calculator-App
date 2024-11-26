@@ -1,8 +1,123 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root{
+  --Very-dark-cyan: hsl(183, 100%, 15%);
+  ---Dark-grayish-cyan: hsl(186, 14%, 43%);
+  --Grayish-cyan: hsl(184, 14%, 56%);
+  --Light-grayish-cyan: hsl(185, 41%, 84%);
+  --Very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --White: hsl(0, 0%, 100%);
+  --Strong-cyan: hsl(172, 67%, 45%);
+  --hover-cyab:hsl(173, 52%, 76%);
 }
 
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Mono", monospace;
+}
+
+#root{
+  max-width: 1280px;  
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body{
+  min-height: 100vh;
+  background-color: var(--Light-grayish-cyan);
+}
+
+
+.logo-container{
+  margin: 50px;
+
+}
 .container{
   display: flex;
+  background-color: var(--White);
+  padding: 25px;
+  border-radius: 20px;
+  gap: 20px;
+  width: 500px;
+}
+
+.container-left{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.container-buttons{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+}
+
+.custom-input{
+  width: 100%;
+}
+
+.custom-inpu::placeholder{
+  text-align: center;
+}
+
+label{
+  padding-bottom: 5px;
+  color: var(---Dark-grayish-cyan);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+label:not(:first-child){
+  margin-top: 20px;
+}
+
+input{
+  height: 35px;
+  border: none;
+  background-color: var(--Very-light-grayish-cyan);
+  color: var(--Very-dark-cyan);
+  font-weight: 700;
+  font-size: 15px;
+  text-align: right;
+}
+
+input::placeholder{
+  color: var(--Grayish-cyan);
+
+}
+
+button{
+  height: 35px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 17px;
+  }
+
+  .button-tip{
+    color: var(--White);
+    background-color: var(--Very-dark-cyan);
+  }
+
+  .button-tip:focus{
+    background-color: var(--Strong-cyan)
+  }
+
+  .button-tip:hover{
+    background-color: var(--hover-cyab);
+  }
+
+
+
+.container-right{
+  width: 50%;
 }
