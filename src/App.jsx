@@ -72,6 +72,14 @@ function App() {
     }else return null
   }
 
+  const isButtonDisabled = () => {
+    const billValue = parseFloat(bill);
+    const peopleValue = parseInt(people);
+    const tipValue = parseFloat(tip)
+    
+    return billValue <= 0 || peopleValue <= 0 || tipValue <= 0 ||isNaN(billValue) || isNaN(peopleValue) ||isNaN(tipValue)
+  }
+
 
 
   return (
@@ -157,6 +165,7 @@ function App() {
       </div>
       </div>
       <button
+      disabled={isButtonDisabled()}
       className='btn-reset'
       onClick={() => reset()}>RESET
       </button> 

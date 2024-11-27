@@ -17,6 +17,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Space Mono", monospace;
+  font-size: 24px;
 }
 
 #root{
@@ -78,7 +79,7 @@ body{
 
 label{
   color: var(---Dark-grayish-cyan);
-  font-size: 24px;
+/*   font-size: 24px; */
   font-weight: 600;
 }
 
@@ -92,7 +93,7 @@ input{
   background-color: var(--Very-light-grayish-cyan);
   color: var(--Very-dark-cyan);
   font-weight: 700;
-  font-size: 24px;
+  /* font-size: 24px; */
   text-align: right;
   cursor: pointer;
   border-radius: 5px;
@@ -133,7 +134,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
 input::placeholder{
   color: var(--Grayish-cyan);
-  font-size: 24px;
+/*   font-size: 24px; */
 }
 
 .container-people{
@@ -153,7 +154,13 @@ button{
   cursor: pointer;
   border-radius: 5px;
   font-weight: 600;
-  font-size: 24px;
+ /*  font-size: 24px */;
+  }
+
+  button:disabled {
+    background-color: hsla(183, 34%, 35%, 0.507);
+    cursor: not-allowed;
+    /* opacity: 0.5; */
   }
 
 .button-tip{
@@ -181,7 +188,7 @@ button{
 
 .text{
   color: var(--White);
-  font-size: 24px;
+ /*  font-size: 24px; */
 }
 
 .text-person{
@@ -209,4 +216,34 @@ button{
 
 .btn-reset:hover{
   background-color: var(--Light-grayish-cyan);
+}
+
+@media(max-width:468px){
+
+  *{
+    font-size: 18px;
+  }
+  .container{
+    flex-direction: column;
+  }
+
+  .container-right{
+    width: auto;
+  }
+
+  .container-left{
+    width: auto;
+  }
+
+  .container-buttons{
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .text-person{
+    font-size: 14px;
+  }
+
+  .number{
+    font-size: 1.8rem;
+  }
 }
