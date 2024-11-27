@@ -35,28 +35,31 @@ body{
 
 .logo-container{
   margin: 50px;
+}
 
+.logo{
+  margin-top: 50px;
 }
 .container{
   display: flex;
   background-color: var(--White);
-  padding: 25px;
+  padding: 40px;
   border-radius: 20px;
-  gap: 20px;
-  width: 500px;
+  gap: 50px;
 }
 
 .container-left{
   display: flex;
   flex-direction: column;
+  gap: 50px;
   width: 50%;
 }
 
 .container-buttons{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 5px;
-  grid-row-gap: 5px;
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
 }
 
 .custom-input{
@@ -67,42 +70,52 @@ body{
   text-align: center;
 }
 
+.subcontainer{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 label{
-  padding-bottom: 5px;
   color: var(---Dark-grayish-cyan);
-  font-size: 15px;
+  font-size: 24px;
   font-weight: 600;
 }
 
 label:not(:first-child){
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 input{
-  height: 35px;
+  height: 50px;
   border: none;
   background-color: var(--Very-light-grayish-cyan);
   color: var(--Very-dark-cyan);
   font-weight: 700;
-  font-size: 14px;
+  font-size: 24px;
   text-align: right;
   cursor: pointer;
   border-radius: 5px;
-  padding-right: 5px;
+  padding-right: 15px;
+  width: 100%;
 }
 
 .input-bill{
   background-image: url(../src/assets/img/icon-dollar.svg);
   background-repeat: no-repeat;
-  background-position: left 5px center;
-  background-size: 10px;
+  background-position: left 15px center;
+  background-size: 14px;
 }
 
 .input-people{
   background-image: url(../src/assets/img/icon-person.svg);
   background-repeat: no-repeat;
-  background-position: left 5px center;
-  background-size: 10px;
+  background-position: left 15px center;
+  background-size: 14px;
+}
+
+.input-people.active{
+  border-color: red;
 }
 
 input:focus{
@@ -120,16 +133,27 @@ input[type="number"]::-webkit-inner-spin-button {
 
 input::placeholder{
   color: var(--Grayish-cyan);
-  font-size: 14px;
+  font-size: 24px;
+}
+
+.container-people{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text-error{
+  color: red;
+  font-weight: 600;
 }
 
 button{
-  height: 35px;
+  height: 50px;
   border: none;
   cursor: pointer;
   border-radius: 5px;
   font-weight: 600;
-  font-size: 17px;
+  font-size: 24px;
   }
 
 .button-tip{
@@ -147,4 +171,42 @@ button{
 
 .container-right{
   width: 50%;
+  background-color: var(--Very-dark-cyan);
+  padding: 40px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.text{
+  color: var(--White);
+  font-size: 24px;
+}
+
+.text-person{
+  color: var(--Grayish-cyan);
+  font-size: 20px;
+}
+
+.container-total{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.number{
+  font-size: 2.5rem;
+  color: var(--Strong-cyan)
+}
+
+.btn-reset{
+  width: 100%;
+  background-color: var(--Strong-cyan);
+  color: var(--Very-dark-cyan);
+}
+
+.btn-reset:hover{
+  background-color: var(--Light-grayish-cyan);
 }
